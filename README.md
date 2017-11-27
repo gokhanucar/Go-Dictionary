@@ -1,4 +1,4 @@
-# Go-Dictionary
+# Go-Dictionary (Yapım aşamasında)
 GoDictionary Web Application &amp; Web Service
 
 Sosyal medyada yer alan türevlerine(ekşi sözlük) benzer şekilde kullanıcı profili oluşturularak mevcut başlık/kategoriler dahilinde “entry” girilebilen web uygulaması. Üye olmayan kullanıcıları da kapsayacak şekilde “like” ve “dislike” fonksiyonelliği. Aynı proje dahilinde admin paneli aracılığı ile başlık, entry ve kullanıcıların veritabanı kaydını değiştiren back-end yapısı. Admin paneli ve kullanıcı arayüzüne destek veren restful servis katmanı.
