@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
+    <!-- Meta, title, CSS, favicons, diğer bilgiler... -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Üye Girişi</title>
+
+    <!-- core CSS dosyaları -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/nprogress.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/custom.min.css" rel="stylesheet" />
+    <link href="~/Content/project.login.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery.min.js"></script>
+</head>
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form>
+                        @Html.AntiForgeryToken()
+                        <h1>Admin Girişi</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Kullanıcı adı..." name="UserName" id="username" value="" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Şifre..." name="Password" id="password" value="" required="" />
+                        </div>
+                        <div>
+                            <input type="submit" class="btn btn-success submit" id="submit-btn" value="Giriş Yap" />
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-comments-o"></i> GoDictionary Admin Panel</h1>
+                                <p>&copy;2017 Wissen Akademi Bitirme Projesidir. Proje sahibi Gökhan Uçar</p>
+                            </div>
+                        </div>
+                        @Html.ValidationSummary(false)
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#submit-btn').on('click', function () {
+            var credentials = {};
+
+            credentials.grant_type = 'password';
+            credentials.UserName = $('#username').val();
+            credentials.Password = $('#password').val();
+
+            $.ajax({
+                url: 'http://localhost:21423/token',
+                method: 'post',
+                dataType: 'json',
+                data: credentials,
+                success: function (response) {
+                    console.log(response);
+                    accessToken = response.access_token;
+                    location.href = "http://localhost:51663/home/index?userName=" + credentials.UserName;
+                }
+            })
+        });
+    </script>
+</body>
+</html>

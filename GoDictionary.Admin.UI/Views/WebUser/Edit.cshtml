@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Profil Güncelleme";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@model GoDictionary.Admin.UI.Models.DataTransferObjects.WebUserDTO
+
+<form id="frm" class="form-horizontal form-label-left" novalidate>
+    <span class="section">Kişisel Bilgiler</span>
+    @Html.HiddenFor(model => model.ID)
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="userName">
+            Kullanıcı Adı
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="userName" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
+                   data-validate-words="2" name="UserName" value="@Model.UserName" type="text" readonly="readonly">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
+            Email
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="email" id="email" name="Email" value="@Model.Email" class="form-control col-md-7 col-xs-12" readonly="readonly">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+            İsim <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="first-name" name="FirstName" required="required" class="form-control col-md-7 col-xs-12" value="@Model.FirstName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+            Soy İsim <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="last-name" name="LastName" required="required" class="form-control col-md-7 col-xs-12" value="@Model.LastName">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label for="password" class="control-label col-md-3">Yeni Şifre</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="password" type="password" name="Password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Şifreyi tekrar giriniz</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="password2" type="password" name="password2" data-validate-linked="Password" class="form-control col-md-7 col-xs-12" required="required">
+        </div>
+    </div>
+    <div class="item form-group">
+        <label for="role" class="control-label col-md-3 col-sm-3 col-xs-12">Yetki Derecesi</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="role" type="text" name="Role" class="form-control col-md-7 col-xs-12" readonly="readonly" value="@Model.Role">
+        </div>
+    </div>
+    <div class="item form-group">
+    <label for="membership-date" class="control-label col-md-3 col-sm-3 col-xs-12">Üyelik Tarihi</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <input id="membership-date" type="text" name="MembershipDate" class="form-control col-md-7 col-xs-12" readonly="readonly" value="@Model.MembershipDate.ToShortDateString()">
+    </div>
+    </div>
+
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-3">
+            @*<button type="submit" class="btn btn-primary">İptal</button>*@
+            <input id="send" type="submit" class="btn btn-success" value="Güncelle"/>
+        </div>
+    </div>
+</form>
+
+<script>
+    $('#frm').submit(function (e) {
+        e.preventDefault();
+
+        var UserName = $('#userName').val();
+        var Email = $('#email').val();
+        var FirstName = $('#first-name').val();
+        var LastName = $('#last-name').val();
+        var Password = $('#password').val();
+        var Role = $('#role').val();
+        var MembershipDate = $('#membership-date').val();
+
+        $.ajax({
+            url: 'http://localhost:21423/api/webusers/UpdateWebUser/' + @Model.ID,
+            type: 'PUT',
+            data: UserName & Email & FirstName & LastName & Password & Role&MembershipDate,
+            success: function (response) {
+                console.log(response);
+                location.href = "http://localhost:51663/home/index?userName=" + @Model.UserName;
+            },
+            error: function (err) {
+
+                console.log(err.responseText);
+                var obj = JSON.parse(err.responseText);
+                var modelState = obj.ModelState;
+
+                console.log(modelState);
+
+                var keys = Object.keys(modelState);
+
+                console.log(keys);
+
+                console.log(modelState[keys[0]][0]);
+            }
+        })
+    })
+</script>

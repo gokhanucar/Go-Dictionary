@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "GetUserByID";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@model GoDictionary.Admin.UI.Models.DataTransferObjects.WebUserDTO
+
+<h2>GetUserByID</h2>
+
+
+<div class="col-md-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>MembershipDate</th>
+            </tr>
+        </thead>
+        <tbody id="t-body">
+            
+            
+            <tr>
+                <td>@Model.UserName</td>
+                <td>@Model.FirstName</td>
+                <td>@Model.LastName</td>
+                <td>@Model.Email</td>
+                <td>@Model.Password</td>
+                <td>@Model.Role</td>
+                <td>@Model.MembershipDate</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@model GoDictionary.Admin.UI.Models.DataTransferObjects.CategoryDTO
+
+<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Title">
+            Başlık <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="Title" name="Title" required="required" class="form-control col-md-7 col-xs-12" value="@Model.Title">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Description">
+            Açıklama <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="Description" name="Description" required="required" class="form-control col-md-7 col-xs-12" value="@Model.Description">
+        </div>
+    </div>
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+            @*<button class="btn btn-primary" type="button">Cancel</button>
+                <button class="btn btn-primary" type="reset">Reset</button>*@
+            <input type="submit" class="btn btn-success" value="Kaydet" />
+        </div>
+    </div>
+
+</form>
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script>
+    $('#demo-form2').submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: 'http://localhost:21423/api/categories/UpdateCategory/' + @Model.ID,
+            method: 'post',
+            data: $('#demo-form2').serialize(),
+            success: function (response) {
+                console.log(response);
+                location.href = "http://localhost:51663/Category/ListAllCategories";
+            },
+            error: function (err) {
+
+                console.log(err.responseText);
+                var obj = JSON.parse(err.responseText);
+                var modelState = obj.ModelState;
+
+                console.log(modelState);
+
+                var keys = Object.keys(modelState);
+
+                console.log(keys);
+
+                console.log(modelState[keys[0]][0]);
+            }
+        });
+    });
+</script>
