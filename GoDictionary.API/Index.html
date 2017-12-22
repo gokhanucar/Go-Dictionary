@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <ul id="product-list"></ul>
+    <button id="btn-get-data">Get Data</button>
+    <button id="btn-auth">Authenticate</button>
+</body>
+</html>
+<script src="Scripts/jquery-3.2.1.js"></script>
+<script>
+    var accessToken = '';
+
+    $('#btn-get-data').on('click', function () {
+
+        $.ajax({
+            url: 'http://localhost:21423/api/webusers/getallusers',
+            method: 'get',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken)
+            },
+            success: function (response) {
+                var list = $('#product-list');
+
+                $.each(response, function (key, val) {
+                    list.append(
+                        '<li>' +
+                        val.UserName + ' :: ' +
+                        val.Email + ' ::| ' +
+                        val.MembershipDate + ' :: ' + val.Role +
+                        '</li>');
+                });
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    });
+
+    $('#btn-auth').on('click', function () {
+
+        var credentials = {};
+
+        credentials.grant_type = 'password';
+        credentials.UserName = 'admin';
+        credentials.Password = '1234';
+
+        $.ajax({
+            url: 'http://localhost:21423/token',
+            method: 'post',
+            dataType: 'json',
+            data: credentials,
+            success: function (response) {
+                console.log(response);
+                accessToken = response.access_token;
+            }
+        })
+    });
+</script>

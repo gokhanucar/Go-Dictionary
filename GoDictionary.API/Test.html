@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.post demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <form action="/" id="frm">
+        <input id="UserName" type="text" name="UserName" placeholder="UserName...">
+        <input id="FirstName" type="text" name="FirstName" placeholder="FirstName...">
+        <input id="LastName" type="text" name="LastName" placeholder="LastName...">
+        <input id="Email" type="text" name="Email" placeholder="Email...">
+        <input id="Password" type="text" name="Password" placeholder="Password...">
+
+        <input type="submit" value="Submit">
+    </form>
+    <!-- the result of the search will be rendered inside this div -->
+    <div id="result"></div>
+
+    <script>
+        $('#frm').submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: 'http://localhost:21423/api/webusers/createwebuser',
+                method: 'post',
+                data: $('#frm').serialize(),
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (err) {
+
+                    console.log(err.responseText);
+                    var obj = JSON.parse(err.responseText);
+                    var modelState = obj.ModelState;
+
+                    console.log(modelState);
+
+                    var keys = Object.keys(modelState);
+
+                    console.log(keys);
+
+                    console.log(modelState[keys[0]][0]);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
