@@ -1,0 +1,38 @@
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.dll.config
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.dll
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.pdb
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.dll
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.pdb
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.dll
+C:\Users\Wissen\documents\visual studio 2015\Projects\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.pdb
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.dll.config
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.dll
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.pdb
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.dll
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.pdb
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.dll.config
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.dll
+C:\Users\Gökhan\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.pdb
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.dll.config
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.dll
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.BLL.pdb
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.dll
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\GoDictionary.DAL.pdb
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.dll
+C:\Users\Wissen\Desktop\GoDictionary\GoDictionary.BLL\obj\Debug\GoDictionary.BLL.pdb
